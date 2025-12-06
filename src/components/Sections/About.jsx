@@ -40,7 +40,7 @@ const About = () => {
         viewport={{ once: true }}
         transition={{ duration: 0.6, ease: "easeInOut" }}
       >
-        <SectionHeader title="Services" />
+        <SectionHeader title="About" />
       </motion.div>
       {/* Container */}
       <div className="flex flex-col lg:flex-row items-center flex-wrap gap-6">

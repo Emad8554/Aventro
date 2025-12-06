@@ -67,7 +67,7 @@ import { cn } from "@/lib/utils";
 const Features = () => {
   return (
     <div className="bg-background layout">
-      <div className="flex flex-col lg:items-center lg:flex-row gap-6 space-y-8">
+      <div className="flex flex-col justify-between lg:items-center lg:flex-row gap-6 space-y-8">
         {/* Left Section */}
         <div className="w-full lg:w-[45%] space-y-7">
           {/* Header icon */}
