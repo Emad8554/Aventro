@@ -1,26 +1,115 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-cardBg: var(--cardBg);
 }
 
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #010916;
+    --foreground: #0b1527;
+    --cardBg: #0c1321;
+  }
+
+  * {
+    @apply box-border p-0 m-0;
+  }
+  html {
+    @apply scroll-smooth;
+  }
+  body {
+    @apply overflow-x-hidden;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    font-family: var(--font-audiowide);
+  }
+
+  p,
+  span {
+    font-family: var(--font-roboto);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer components {
+  .layout {
+    @apply px-4 md:px-16 lg:px-24 py-20;
+  }
+
+  .activeLink {
+    @apply text-white relative;
+  }
+  .underline-anim {
+    @apply relative;
+  }
+
+  .underline-anim::after {
+    @apply content-[''] absolute left-0 -bottom-6 h-px w-full bg-blue-400 origin-left scale-x-0 transition-transform duration-300;
+  }
+
+  .underline-anim:hover::after {
+    @apply scale-x-100;
+  }
+
+  .activeLink::after {
+    @apply scale-x-100;
+  }
+
+  .btn {
+    @apply text-white bg-[#279ae4] rounded-lg font-bold hover:shadow-[0_0_25px_5px_rgba(39,154,228,0.5)] transition-all duration-300 cursor-pointer;
+  }
+
+  .mainText {
+    @apply inline-block mb-8 relative text-blue-200 font-extrabold tracking-wide text-3xl pb-4;
+  }
+
+  .mainText::after {
+    @apply content-[''] absolute left-0 -bottom-1.5 w-full h-px bg-gray-400/10;
+  }
+
+  .mainText::before {
+    @apply content-[''] absolute left-1/2 bg-blue-400 h-0.5 w-[40%] -bottom-1.5 -translate-x-1/2;
+  }
+
+  .servicesCardAnim::before {
+    @apply content-[''] absolute top-0 left-0 w-0.5 h-0 bg-blue-600 transition-all duration-500 ease-in-out;
+  }
+
+  .servicesCardAnim:hover::before {
+    @apply h-full;
+  }
+  .special {
+    @apply flex items-center gap-2 text-blue-400 text-xs bg-[#021223] w-max py-1.5 px-6 rounded-full;
+  }
+  ::-webkit-scrollbar {
+    @apply w-4;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-slate-900;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-blue-600 rounded-full border-4 border-transparent;
+    background-clip: padding-box;
+  }
+  .tabBadgeAnim {
+    animation: badgeAnim 4s cubic-bezier(0.25, 0.46, 0.45, 1.5) infinite;
+  }
+
+  @keyframes badgeAnim {
+    0% {
+      transform: translateY(10px);
+    }
+    50% {
+      transform: translateY(0px);
+    }
+    100% {
+      transform: translateY(10px);
+    }
+  }
 }
