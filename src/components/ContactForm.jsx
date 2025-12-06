@@ -63,9 +63,12 @@ const ContactForm = () => {
     if (!formData.email || !/\S+@\S+\.\S+/.test(formData.email)) {
       newErrors.email = "Please enter a valid email";
     }
-    if (formData.phone && !/^[0-9]{10,15}$/.test(formData.phone)) {
+    if (!formData.phone) {
+      newErrors.phone = "Phone is required";
+    } else if (!/^[0-9]{10,15}$/.test(formData.phone)) {
       newErrors.phone = "Phone must be 10–15 digits";
     }
+
     if (!formData.theme) {
       newErrors.theme = "Please select a theme";
     }
