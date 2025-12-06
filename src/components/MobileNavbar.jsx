@@ -1,16 +1,7 @@
 "use client";
-import { useState } from "react";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-  DropdownMenuSub,
-  DropdownMenuSubContent,
-  DropdownMenuSubTrigger,
-} from "@/components/ui/dropdown-menu";
 import { X } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
+import DropdownItem from "./DropdownItem";
 const navItems = [
   { label: "Home", href: "#" },
   { label: "About", href: "#about" },
@@ -24,74 +15,6 @@ const navItems = [
   },
   { label: "Contact", href: "#contact" },
 ];
-
-const dropdownData = [
-  { label: "Dropdown 1", href: "#" },
-  {
-    label: "Deep Dropdown",
-    href: "#",
-    sub: [
-      { label: "Deep Dropdown 1", href: "#" },
-      { label: "Deep Dropdown 2", href: "#" },
-      { label: "Deep Dropdown 3", href: "#" },
-      { label: "Deep Dropdown 4", href: "#" },
-    ],
-  },
-  { label: "Dropdown 2", href: "" },
-  { label: "Dropdown 3", href: "#" },
-  { label: "Dropdown 4", href: "#" },
-];
-const DropdownItem = ({ label, className }) => {
-  const [isOpen, setIsOpen] = useState(false);
-
-  return (
-    <DropdownMenu open={isOpen} onOpenChange={setIsOpen}>
-      <DropdownMenuTrigger
-        className={`focus:outline-none block ${className}`}
-        onMouseEnter={() => setIsOpen(true)}
-        onMouseLeave={() => setIsOpen(false)}
-      >
-        {label}
-      </DropdownMenuTrigger>
-
-      <DropdownMenuContent
-        className="w-[400px] border-gray-700 p-1 mt-1 bg-slate-950 absolute"
-        onMouseEnter={() => setIsOpen(true)}
-        onMouseLeave={() => setIsOpen(false)}
-      >
-        {dropdownData.map((item, index) =>
-          item.sub ? (
-            <DropdownMenuSub key={index}>
-              <DropdownMenuSubTrigger className="text-white hover:text-blue-400 cursor-pointer">
-                {item.label}
-              </DropdownMenuSubTrigger>
-
-              <DropdownMenuSubContent className="w-48 bg-slate-950 border-gray-700/10 p-1">
-                {item.sub.map((subItem, subIndex) => (
-                  <DropdownMenuItem
-                    key={subIndex}
-                    asChild
-                    className="text-white hover:text-blue-400 cursor-pointer transition-colors duration-300"
-                  >
-                    <a href={subItem.href}>{subItem.label}</a>
-                  </DropdownMenuItem>
-                ))}
-              </DropdownMenuSubContent>
-            </DropdownMenuSub>
-          ) : (
-            <DropdownMenuItem
-              key={index}
-              asChild
-              className="text-white hover:text-blue-400 cursor-pointer transition-colors duration-300"
-            >
-              <a href={item.href}>{item.label}</a>
-            </DropdownMenuItem>
-          )
-        )}
-      </DropdownMenuContent>
-    </DropdownMenu>
-  );
-};
 
 const MobileNavbar = ({ mobileOpen, setMobileOpen, active, setActive }) => {
   return (

@@ -1,15 +1,9 @@
 "use client";
-import { Facebook, X, Instagram, Linkedin } from "lucide-react";
+import { Facebook, X, Instagram, Linkedin, ChevronDown } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Info, MoveRight, StarsIcon } from "lucide-react";
 import { Textarea } from "./ui/textarea";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
+
 import { useState } from "react";
 import { Spinner } from "./ui/spinner";
 const stats = [
@@ -61,10 +55,6 @@ const ContactForm = () => {
     setErrors((prevErrors) => ({ ...prevErrors, [name]: "" }));
   };
 
-  const handleSelectChange = (value) => {
-    setFormData((prev) => ({ ...prev, theme: value }));
-    setErrors((prevErrors) => ({ ...prevErrors, theme: "" }));
-  };
   const validateForm = () => {
     const newErrors = {};
     if (!formData.fullName || formData.fullName.length < 3) {
@@ -169,22 +159,21 @@ const ContactForm = () => {
           </div>
 
           <div className="w-full">
-            <Select value={formData.theme} onValueChange={handleSelectChange}>
-              <SelectTrigger className="border w-full border-gray-300/10">
-                <SelectValue placeholder="Theme" />
-              </SelectTrigger>
-              <SelectContent className="bg-[#0c1321] border-2 border-gray-300/10">
-                <SelectItem className="text-white" value="light">
-                  Light
-                </SelectItem>
-                <SelectItem className="text-white" value="dark">
-                  Dark
-                </SelectItem>
-                <SelectItem className="text-white" value="system">
-                  System
-                </SelectItem>
-              </SelectContent>
-            </Select>
+            <select
+              name="theme"
+              value={formData.theme}
+              onChange={handleChange}
+              onFocus={() => setOpen(true)}
+              onBlur={() => setOpen(false)}
+              className="w-full border border-gray-300/10 bg-[#0c1321] text-gray-400 rounded-md px-3 py-2 cursor-pointer appearance-none"
+            >
+              <option value="" disabled>
+                Theme
+              </option>
+              <option value="light">Light</option>
+              <option value="dark">Dark</option>
+              <option value="system">System</option>
+            </select>
             {errors.theme && (
               <p className="text-red-500 text-sm mt-1">{errors.theme}</p>
             )}
