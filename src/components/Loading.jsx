@@ -8,7 +8,7 @@ const Loading = ({ isFading }) => {
     : "pointer-events-auto";
   return (
     <div
-      className={`fixed inset-0 w-full h-screen flex items-center justify-center z-[9999] bg-linear-to-b from-background to-foreground  transition-opacity duration-500 ease-out ${opacityClass} ${pointerEventsClass}`}
+      className={`fixed inset-0 w-full h-screen flex items-center justify-center z-50 bg-linear-to-b from-background to-foreground  transition-opacity duration-500 ease-out ${opacityClass} ${pointerEventsClass}`}
     >
       <div role="status">
         <svg
