@@ -71,7 +71,14 @@ const Services = () => {
       {/* Card Container */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
         {services.map((service, index) => (
-          <div
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{
+              duration: 0.6,
+              delay: index * 0.3,
+              ease: "easeInOut",
+            }}
             key={index}
             className="relative group p-6 flex flex-col gap-2 bg-cardBg rounded-lg hover:-translate-y-1 transition-all duration-300 servicesCardAnim"
           >
@@ -88,7 +95,7 @@ const Services = () => {
               </a>
               <MoveRight className="group-hover:translate-x-1 group-hover:text-blue-200 duration-300" />
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
     </section>

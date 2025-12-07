@@ -31,7 +31,7 @@ const teamMembers = [
 
   {
     name: "Mohammed Yasser",
-    role: "I dont Know",
+    role: "UI/UX",
     image: "/yasser.jpg",
     bio: "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium.",
   },

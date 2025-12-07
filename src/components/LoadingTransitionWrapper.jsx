@@ -7,7 +7,7 @@ export default function LoadingTransitionWrapper({ children }) {
   const [isFading, setIsFading] = useState(false);
 
   useEffect(() => {
-    const timer1 = setTimeout(() => setIsFading(true), 500000000);
+    const timer1 = setTimeout(() => setIsFading(true), );
     const timer2 = setTimeout(() => setLoading(false), 1000);
 
     return () => {

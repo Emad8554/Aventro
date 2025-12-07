@@ -74,7 +74,7 @@
   }
 
   .mainText::before {
-    @apply content-[''] absolute left-1/2 bg-blue-400 h-0.5 w-[40%] -bottom-1.5 -translate-x-1/2;
+    @apply content-[''] absolute left-1/2 bg-blue-400 h-0.5 w-[50%] -bottom-1.5 -translate-x-1/2;
   }
 
   .servicesCardAnim::before {

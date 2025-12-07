@@ -96,27 +96,32 @@ const About = () => {
         </motion.div>
       </div>
       {/* Card Container */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.9, ease: "easeInOut" }}
-        className="grid grid-cols-1 lg:grid-cols-3 gap-8 mt-8"
-      >
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mt-8">
         {aboutCards.map((card, index) => (
-          <div
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{
+              duration: 0.6,
+              delay: 0.3 * index,
+              ease: "easeInOut",
+            }}
             key={index}
             className="group p-6 flex flex-col gap-2 bg-cardBg shadow-blue-600/20 rounded-lg hover:shadow-2xl hover:scale-105 hover:backdrop-blur-xl hover:-translate-1 transition-all duration-300"
           >
-            <div className="text-blue-400 mb-4 w-14 h-14 flex items-center justify-center bg-[#0d1d31] rounded-full group-hover:bg-[#1278bb] group-hover:text-white transition-colors">
+            <div className="text-blue-400 mb-4 w-14 h-14 flex items-center justify-center bg-[#0d1d31] rounded-full group-hover:bg-[#1278bb] group-hover:text-white transition-colors duration-300">
               {card.icon}
             </div>
-            <h3 className="text-blue-100 text-xl font-bold">{card.title}</h3>
+            <h3 className="text-blue-100 text-xl font-bold group-hover:text-white transition-colors">
+              {card.title}
+            </h3>
             <p className="text-gray-300 text-sm font-medium">
               {card.description}
             </p>
-          </div>
+          </motion.div>
         ))}
-      </motion.div>
+      </div>
     </section>
   );
 };

@@ -2,13 +2,11 @@
 import React from "react";
 
 const Loading = ({ isFading }) => {
-  const opacityClass = isFading ? "opacity-0" : "opacity-100";
-  const pointerEventsClass = isFading
-    ? "pointer-events-none"
-    : "pointer-events-auto";
   return (
     <div
-      className={`fixed inset-0 w-full h-screen flex items-center justify-center z-50 bg-linear-to-b from-background to-foreground  transition-opacity duration-500 ease-out ${opacityClass} ${pointerEventsClass}`}
+      className={`fixed inset-0 w-full h-screen flex items-center justify-center z-50 bg-linear-to-b bg-transparent  transition-opacity duration-500 ease-out ${
+        isFading ? "opacity-0" : "opacity-100"
+      } ${isFading ? "pointer-events-none" : "pointer-events-auto"}`}
     >
       <div role="status">
         <svg
