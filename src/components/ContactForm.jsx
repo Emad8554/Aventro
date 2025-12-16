@@ -120,6 +120,7 @@ const ContactForm = () => {
       {/* Form */}
       <form onSubmit={handleSubmit} className="mt-5 flex flex-col gap-4">
         <div className="flex flex-col md:flex-row gap-4">
+          {/* Input */}
           <div className="w-full">
             <Input
               type="text"
@@ -133,6 +134,7 @@ const ContactForm = () => {
             )}
           </div>
 
+          {/* Input */}
           <div className="w-full">
             <Input
               type="email"
@@ -147,6 +149,7 @@ const ContactForm = () => {
           </div>
         </div>
 
+        {/* Input */}
         <div className="flex flex-col md:flex-row gap-4">
           <div className="w-full">
             <Input
@@ -161,6 +164,7 @@ const ContactForm = () => {
             )}
           </div>
 
+          {/* Select Theme */}
           <div className="w-full">
             <select
               name="theme"
@@ -183,6 +187,7 @@ const ContactForm = () => {
           </div>
         </div>
 
+        {/* Message */}
         <div>
           <Textarea
             placeholder="Tell us more about your needs"
@@ -200,7 +205,7 @@ const ContactForm = () => {
             {successMsg}
           </p>
         )}
-
+        {/* Submit Button */}
         <button
           type="submit"
           className={`btn h-14 flex items-center justify-center gap-2 ${

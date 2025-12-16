@@ -138,6 +138,7 @@ const Navbar = () => {
           );
         })}
       </ul>
+      {/* Social Icons */}
       <div className="flex items-center space-x-4">
         {socialIcons.map((item, index) => {
           return (

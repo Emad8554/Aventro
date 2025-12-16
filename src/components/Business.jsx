@@ -49,7 +49,6 @@ const Business = () => {
   return (
     <div className="layout bg-foreground text-white">
       <div className="flex flex-col lg:flex-row gap-12 items-start">
-        
         {/* Left Column */}
         <div className="lg:w-1/2 space-y-4">
           <h3 className="text-sm font-semibold text-blue-400 uppercase tracking-wider">
