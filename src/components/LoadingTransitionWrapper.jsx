@@ -7,12 +7,12 @@ export default function LoadingTransitionWrapper({ children }) {
   const [isFading, setIsFading] = useState(false);
 
   useEffect(() => {
-    const timer1 = setTimeout(() => setIsFading(true), );
-    const timer2 = setTimeout(() => setLoading(false), 1000);
+    const fadeTimer = setTimeout(() => setIsFading(true), 1000);
+    const LoadingTimer = setTimeout(() => setLoading(false), 2000);
 
     return () => {
-      clearTimeout(timer1);
-      clearTimeout(timer2);
+      clearTimeout(fadeTimer);
+      clearTimeout(LoadingTimer);
     };
   }, []);
 
@@ -20,7 +20,7 @@ export default function LoadingTransitionWrapper({ children }) {
     <>
       {(loading || isFading) && <Loading isFading={isFading} />}{" "}
       <div
-        className={`transition-opacity duration-200 ${
+        className={`transition-all duration-200 ${
           loading
             ? "opacity-0 pointer-events-none"
             : "opacity-100 pointer-events-auto"

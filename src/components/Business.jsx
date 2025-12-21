@@ -1,7 +1,5 @@
 import {
   ShieldCheck,
-  Layers,
-  Headset,
   Rocket,
   ChartSpline,
   UsersRound,
@@ -78,7 +76,7 @@ const Business = () => {
         </div>
 
         {/* Right */}
-        <div className="lg:w-1/2 ">
+        <div className="lg:w-1/2">
           <h2 className="text-2xl md:text-3xl font-bold mb-2 text-blue-100">
             Request a Consultation
           </h2>

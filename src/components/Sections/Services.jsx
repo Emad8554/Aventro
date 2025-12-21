@@ -89,7 +89,7 @@ const Services = () => {
             <p className="text-gray-300 text-sm font-medium">
               {service.description}
             </p>
-            <div className="flex items-center gap-2 text-blue-400 ">
+            <div className="flex items-center gap-2 text-blue-400">
               <a href="" className="font-semibold">
                 Learn More
               </a>

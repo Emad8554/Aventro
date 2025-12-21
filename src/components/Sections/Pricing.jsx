@@ -2,69 +2,68 @@ import { Check } from "lucide-react";
 import React from "react";
 import SectionHeader from "../SectionHeader";
 
+const plans = [
+  {
+    name: "Starter",
+    subtitle: "For small teams getting started",
+    price: "$29",
+    billing: "Billed monthly",
+    features: [
+      "Up to 10 team members",
+      "5 GB storage per user",
+      "Basic reporting and analytics",
+      "Email support",
+      "Mobile app access",
+    ],
+    button: {
+      text: "Start Free Trial",
+      variant: "secondary",
+    },
+    isPopular: false,
+    footerNote: "14-day free trial, no credit card required",
+  },
+  {
+    name: "Professional",
+    subtitle: "For growing businesses",
+    price: "$59",
+    billing: "Billed monthly",
+    features: [
+      "Unlimited team members",
+      "50 GB storage per user",
+      "Advanced analytics and reporting",
+      "Priority email and chat support",
+      "Custom integrations",
+      "API access",
+    ],
+    button: {
+      text: "Start Free Trial",
+      variant: "primary",
+    },
+    isPopular: true,
+    footerNote: "14-day free trial, no credit card required",
+  },
+  {
+    name: "Enterprise",
+    subtitle: "For large organizations",
+    price: "Custom Pricing",
+    billing: "Tailored to your needs",
+    features: [
+      "Everything in Professional",
+      "Unlimited storage",
+      "Dedicated account manager",
+      "24/7 phone support",
+      "Advanced security and compliance",
+      "Custom SLA and contracts",
+    ],
+    button: {
+      text: "Contact Sales",
+      variant: "secondary",
+    },
+    isPopular: false,
+    footerNote: "Schedule a consultation with our team",
+  },
+];
 const Pricing = () => {
-  const plans = [
-    {
-      name: "Starter",
-      subtitle: "For small teams getting started",
-      price: "$29",
-      billing: "Billed monthly",
-      features: [
-        "Up to 10 team members",
-        "5 GB storage per user",
-        "Basic reporting and analytics",
-        "Email support",
-        "Mobile app access",
-      ],
-      button: {
-        text: "Start Free Trial",
-        variant: "secondary",
-      },
-      isPopular: false,
-      footerNote: "14-day free trial, no credit card required",
-    },
-    {
-      name: "Professional",
-      subtitle: "For growing businesses",
-      price: "$59",
-      billing: "Billed monthly",
-      features: [
-        "Unlimited team members",
-        "50 GB storage per user",
-        "Advanced analytics and reporting",
-        "Priority email and chat support",
-        "Custom integrations",
-        "API access",
-      ],
-      button: {
-        text: "Start Free Trial",
-        variant: "primary",
-      },
-      isPopular: true,
-      footerNote: "14-day free trial, no credit card required",
-    },
-    {
-      name: "Enterprise",
-      subtitle: "For large organizations",
-      price: "Custom Pricing",
-      billing: "Tailored to your needs",
-      features: [
-        "Everything in Professional",
-        "Unlimited storage",
-        "Dedicated account manager",
-        "24/7 phone support",
-        "Advanced security and compliance",
-        "Custom SLA and contracts",
-      ],
-      button: {
-        text: "Contact Sales",
-        variant: "secondary",
-      },
-      isPopular: false,
-      footerNote: "Schedule a consultation with our team",
-    },
-  ];
-
   return (
     <section id="pricing" className="bg-background layout">
       {/* Header Text */}

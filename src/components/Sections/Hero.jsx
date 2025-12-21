@@ -40,10 +40,7 @@ const cardInfo = [
 ];
 const Hero = () => {
   return (
-    <div
-      className="relative min-h-screen w-full"
-      id="home"
-    >
+    <div className="relative min-h-screen w-full" id="home">
       <Image
         src="/hero.jpg"
         alt="Hero Image"
@@ -52,7 +49,7 @@ const Hero = () => {
         priority
       />
       {/* Overlay */}
-      <div className="absolute inset-0 bg-linear-to-b from-slate-950/90 to-black/80 z-10"></div>
+      <div className="absolute inset-0 bg-linear-to-b from-slate-950/90 to-black/80 z-10" />
       {/* Hero Content */}
       <div className="layout py-40 flex items-center justify-between flex-wrap relative z-20">
         {/* Hero LEFT */}
@@ -135,7 +132,7 @@ const Hero = () => {
           </div>
         </div>
         {/* Hero RIGHT */}
-        <div className="w-full lg:w-[50%] flex lg:mt-0">
+        <div className="w-full lg:w-1/2 flex lg:mt-0">
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}

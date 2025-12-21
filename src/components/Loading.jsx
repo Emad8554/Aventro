@@ -4,7 +4,7 @@ import React from "react";
 const Loading = ({ isFading }) => {
   return (
     <div
-      className={`fixed inset-0 w-full h-screen flex items-center justify-center z-50 bg-linear-to-b bg-transparent  transition-opacity duration-500 ease-out ${
+      className={`fixed inset-0 w-full h-screen flex items-center justify-center z-50 bg-linear-to-b from-background to-transparent transition-opacity duration-500 ease-out ${
         isFading ? "opacity-0" : "opacity-100"
       } ${isFading ? "pointer-events-none" : "pointer-events-auto"}`}
     >

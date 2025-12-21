@@ -123,7 +123,7 @@ const Team = () => {
                     className="object-cover"
                   />
                   {/* Image Blur Overlay */}
-                  <div className="absolute inset-0 bg-linear-to-t from-black/20 via-black/10 to-transparent backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
+                  <div className="absolute inset-0 bg-linear-to-t from-black/20 via-black/10 to-transparent backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-all duration-300" />
                   {/* Social Links */}
                   <div className="absolute bottom-0 left-0 w-full flex justify-center gap-2 p-4 opacity-0 group-hover:opacity-100 translate-y-8 group-hover:translate-y-0 transition-all duration-500">
                     {socialIcons.map((link, index) => (

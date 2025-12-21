@@ -170,8 +170,6 @@ const ContactForm = () => {
               name="theme"
               value={formData.theme}
               onChange={handleChange}
-              onFocus={() => setOpen(true)}
-              onBlur={() => setOpen(false)}
               className="w-full border border-gray-300/10 bg-[#0c1321] text-gray-400 rounded-md px-3 py-2 cursor-pointer appearance-none"
             >
               <option value="" disabled>

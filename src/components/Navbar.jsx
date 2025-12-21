@@ -42,9 +42,9 @@ const Navbar = () => {
     };
 
     window.addEventListener("scroll", handleScroll);
-
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth >= 1024) {
@@ -54,6 +54,7 @@ const Navbar = () => {
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
+
   useEffect(() => {
     const sections = navItems
       .filter((item) => !item.hasDropdown)
@@ -100,7 +101,7 @@ const Navbar = () => {
         <div
           className="fixed inset-0 bg-gray-200/10 backdrop-blur-sm z-40"
           onClick={() => setMobileOpen(false)}
-        ></div>
+        />
       )}
       {/* Mobile Nav */}
       <MobileNavbar
@@ -118,9 +119,7 @@ const Navbar = () => {
               <li key={index}>
                 <DropdownItem
                   label={item.label}
-                  className={`text-gray-400 font-semibold hover:text-white duration-300 transition-colors cursor-pointer underline-anim ${
-                    active === item.label ? "activeLink text-white" : ""
-                  }`}
+                  className="text-gray-400 font-semibold hover:text-white duration-300 transition-colors cursor-pointer underline-anim"
                 />
               </li>
             );
@@ -144,7 +143,7 @@ const Navbar = () => {
           return (
             <a
               key={index}
-              className="text-gray-400 hover:text-blue-200 hover:-transalate-y-2 inline-block hover:scale-105 transition-all duration-500 cursor-pointer"
+              className="text-gray-400 hover:text-blue-200 hover:-translate-y-0.5 inline-block hover:scale-105 transition-all duration-500 cursor-pointer"
             >
               {item.icon}
             </a>

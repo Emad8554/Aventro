@@ -2,7 +2,6 @@ import { Audiowide, Roboto } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Sections/Footer";
-import ScrollProgress from "@/components/ScrollProgress";
 
 const audiowide = Audiowide({
   variable: "--font-audiowide",
